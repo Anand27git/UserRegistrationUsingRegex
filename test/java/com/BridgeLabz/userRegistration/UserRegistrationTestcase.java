@@ -9,10 +9,10 @@ import org.junit.Test;
  * UC-1- Test case to validate  the first Name starting with Capital Letter
  * UC-2- Test case to validate the last Name of user starting with Capital Letter
  * UC-3- Test case to validate User Email ID
- *
+ * UC-4- Test case to validate User Mobile number
  */
 public class UserRegistrationTestcase {
-    
+
 	// UC-1- Test case to validate the first Name starting with Capital Letter
 	@Test
 	public void firstName_whenValid_returnValid() {
@@ -42,5 +42,16 @@ public class UserRegistrationTestcase {
 		Assert.assertEquals(false, email2);
 		// test case passed
 	}
+
+	// UC-4- test cases for validating User Mobile number
+	@Test
+	public void phoneNo_whenValid_returnValid() {
+		boolean phoneNumber = UserRegistration.validateMobile("91 8088533154"); // valid true
+		Assert.assertEquals(true, phoneNumber);
+		boolean phoneNumber2 = UserRegistration.validateMobile("9145896327889652"); // invalid false
+		Assert.assertEquals(false, phoneNumber2);
+		// test case passed
+	}
+    
 }
     
