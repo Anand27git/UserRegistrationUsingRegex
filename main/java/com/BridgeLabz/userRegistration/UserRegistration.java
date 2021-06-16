@@ -7,8 +7,9 @@ import java.util.regex.Pattern;
  * 
  * @author ANAND 
  * purpose: User Registration 
- * UC-1-validate the first name
- *
+ * UC-1-validate the User first name
+ * UC-2-validate the User Last name
+ * 
  *************************************/
 public class UserRegistration {
 
