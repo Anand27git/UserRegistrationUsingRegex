@@ -8,6 +8,7 @@ import org.junit.Test;
  * @author ANAND
  * UC-1- Test case to validate  the first Name starting with Capital Letter
  * UC-2- Test case to validate the last Name of user starting with Capital Letter
+ * UC-3- Test case to validate User Email ID
  *
  */
 public class UserRegistrationTestcase {
@@ -32,4 +33,14 @@ public class UserRegistrationTestcase {
 		// test case Passed
 	}
 
+	// UC-3- Test case to validate User Email ID
+	@Test
+	public void email_whenValid_returnValid() {
+		boolean email = UserRegistration.validateEmail("anand.kumar@bridgelab.co.in"); // valid True
+		Assert.assertEquals(true, email);
+		boolean email2 = UserRegistration.validateEmail("useremail.co.in"); // invalid false
+		Assert.assertEquals(false, email2);
+		// test case passed
+	}
 }
+    
