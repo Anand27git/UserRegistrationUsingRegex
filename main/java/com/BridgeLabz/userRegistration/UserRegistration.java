@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
  * UC-2-validate the User Last name
  * UC-3-validate the User Email ID
  * UC-4-validate the User Mobile number
+ * UC-5-validate the password with minimum 8 characters
  * 
  *************************************/
 public class UserRegistration {
@@ -38,11 +39,29 @@ public class UserRegistration {
 		boolean emailMatches = regexMatch(email, patternString);
 		return emailMatches;
 	}	
+	
+	/*******
+	 * 
+	 * @param mobileNubmer
+	 * @return
+	 */
 	//method to validate MobileNo
 	public static boolean validateMobile(String mobileNubmer) {
 		String patternString = "^([0-9]{2})[\\s]([7-9]{1}[0-9]{9})";
 		boolean phoneMatches = regexMatch(mobileNubmer, patternString);
 		return phoneMatches;
+	}
+	
+	/******
+	 * 
+	 * @param password
+	 * @return
+	 */
+	//method to validate password
+	public static boolean validatePasswordRule1(String password) {
+		String patternString = "^.{8,}$";
+		boolean passwordMatches = regexMatch(password, patternString);
+		return passwordMatches;
 	}
 	/**********
 	 * 

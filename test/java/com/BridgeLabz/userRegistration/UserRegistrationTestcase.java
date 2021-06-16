@@ -10,6 +10,7 @@ import org.junit.Test;
  * UC-2- Test case to validate the last Name of user starting with Capital Letter
  * UC-3- Test case to validate User Email ID
  * UC-4- Test case to validate User Mobile number
+ * UC-5- Test cases to validate password is with minimum 8 characters
  */
 public class UserRegistrationTestcase {
 
@@ -43,7 +44,7 @@ public class UserRegistrationTestcase {
 		// test case passed
 	}
 
-	// UC-4- test cases for validating User Mobile number
+	// UC-4- Test cases for validating User Mobile number
 	@Test
 	public void phoneNo_whenValid_returnValid() {
 		boolean phoneNumber = UserRegistration.validateMobile("91 8088533154"); // valid true
@@ -52,6 +53,15 @@ public class UserRegistrationTestcase {
 		Assert.assertEquals(false, phoneNumber2);
 		// test case passed
 	}
-    
-}
-    
+
+	// UC-5- Test cases to validate password is with minimum 8 characters
+	@Test
+	public void password_whenLengthEight_returnValid() {
+		boolean password = UserRegistration.validatePasswordRule1("anand@1234"); // valid true
+		Assert.assertEquals(true, password);
+		boolean password2 = UserRegistration.validatePasswordRule1("abcd12"); // invalid false
+		Assert.assertEquals(false, password2);
+		// test case passed
+	}
+ 
+} 
