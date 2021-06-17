@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
  * UC-4-validate the User Mobile number
  * UC-5-validate the password with minimum 8 characters
  * UC-6-validate atLeast 1 UpperCase Letter in Password
+ * UC-7-validate atLeast 1 Number in Password
  * 
  *************************************/
 public class UserRegistration {
@@ -60,7 +61,7 @@ public class UserRegistration {
 	 */
 	//method to validate password
 	public static boolean validatePasswordRule1(String password) {
-		String patternString = "^(?=.*[A-Z]).{8,20}$";
+		String patternString = "^([a-zA-Z0-9]).{8,}$";
 		boolean passwordMatches = regexMatch(password, patternString);
 		return passwordMatches;
 	}
