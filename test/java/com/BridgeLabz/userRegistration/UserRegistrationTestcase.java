@@ -3,7 +3,7 @@ package com.BridgeLabz.userRegistration;
 
 import org.junit.Assert;
 import org.junit.Test;
-/*******
+/******************************
  * 
  * @author ANAND
  * UC-1- Test case to validate  the first Name starting with Capital Letter
@@ -13,7 +13,9 @@ import org.junit.Test;
  * UC-5- Test cases to validate password is with minimum 8 characters
  * UC-6- Test cases to validate at Least 1 UpperCase Letter in Password
  * UC-7- Test cases to validate atLeast 1 Number in Password
- */
+ * UC-8- Test cases to validate atLeast 1 Special Characters in Password
+ *
+ **************************/
 public class UserRegistrationTestcase {
 
 	// UC-1- Test case to validate the first Name starting with Capital Letter
@@ -82,6 +84,16 @@ public class UserRegistrationTestcase {
 		boolean password3 = UserRegistration.validatePasswordRule1("Anand123456"); // valid true
 		Assert.assertEquals(true, password3);
 		boolean password4 = UserRegistration.validatePasswordRule1("alhjg"); // invalid false
+		Assert.assertEquals(false, password4);
+		// test case passed
+	}
+
+	// UC-8- Test cases to validate atLeast 1 Special Characters in Password
+	@Test
+	public void password_atleast_oneSpecialCharacter_returnValid() {
+		boolean password3 = UserRegistration.validatePasswordRule1("Anand@123456"); // valid true
+		Assert.assertEquals(true, password3);
+		boolean password4 = UserRegistration.validatePasswordRule1("dsdssd"); // invalid false
 		Assert.assertEquals(false, password4);
 		// test case passed
 	}
