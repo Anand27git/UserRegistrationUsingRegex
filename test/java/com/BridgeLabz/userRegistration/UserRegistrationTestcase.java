@@ -1,6 +1,9 @@
 package com.BridgeLabz.userRegistration;
 
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.junit.Test;
 /******************************
@@ -14,7 +17,7 @@ import org.junit.Test;
  * UC-6- Test cases to validate at Least 1 UpperCase Letter in Password
  * UC-7- Test cases to validate atLeast 1 Number in Password
  * UC-8- Test cases to validate atLeast 1 Special Characters in Password
- *
+ * UC-9- Test cases to validate all sample email Id given
  **************************/
 public class UserRegistrationTestcase {
 
@@ -97,5 +100,37 @@ public class UserRegistrationTestcase {
 		Assert.assertEquals(false, password4);
 		// test case passed
 	}
+	
+	// UC-9- Test cases to validate all sample email Id given
+	 @Test
+     public void givenEmailId_WhenProper_ShouldReturnTrue(){
+		 com.BridgeLabz.userRegistration.UserRegistration valid = new com.BridgeLabz.userRegistration.UserRegistration();
+         assertTrue(valid.isValidEmailId("abc@yahoo.com"));
+         assertTrue(valid.isValidEmailId("abc-100@yahoo.com"));
+         assertTrue(valid.isValidEmailId("abc.100@yahoo.com"));
+         assertTrue(valid.isValidEmailId("abc111@abc.com"));
+         assertTrue(valid.isValidEmailId("abc-100@abc.net"));
+         assertTrue(valid.isValidEmailId("abc.100@abc.com.au"));
+         assertTrue(valid.isValidEmailId("abc@1.com"));
+         assertTrue(valid.isValidEmailId("abc@gmail.com.com"));
+         assertTrue(valid.isValidEmailId("abc+100@gmail.com"));
+     }
 
+     @Test
+     public void givenEmailId_WhenNotProper_ShouldReturnFalse(){
+    	 UserRegistration valid = new UserRegistration();
+         assertFalse(valid.isValidEmailId("abc.@gmail.com"));
+         assertFalse(valid.isValidEmailId("abc@.com.my"));
+         assertFalse(valid.isValidEmailId("abc123@gmail.a"));
+         assertFalse(valid.isValidEmailId("abc123@.com"));
+         assertFalse(valid.isValidEmailId("abc123@.com.com"));
+         assertFalse(valid.isValidEmailId(".abc@abc.com"));
+         assertFalse(valid.isValidEmailId("abc()*@gmail.com"));
+         assertFalse(valid.isValidEmailId("abc@%*.com"));
+         assertFalse(valid.isValidEmailId("abc..2002@gmail.com"));
+         assertFalse(valid.isValidEmailId("abc.@gmail.com"));
+         assertFalse(valid.isValidEmailId("abc@gmail.com.1a"));
+         assertFalse(valid.isValidEmailId("abc@gmail.com.aa.au"));
+         //testcase Passed for all the email Ids
+     }
 } 

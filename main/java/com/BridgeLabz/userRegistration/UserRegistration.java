@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * UC-6-validate atLeast 1 UpperCase Letter in Password
  * UC-7-validate atLeast 1 Number in Password
  * UC-8-validate atLeast 1 Special Characters in Password
- * 
+ * UC-9-validate all sample email Id given
  *************************************/
 public class UserRegistration {
 
@@ -79,4 +79,17 @@ public class UserRegistration {
 		System.out.println(matchedname);
 		return matchedname;
 	}
+	
+	
+		//method to validate all sample email ID
+	        private static final String EMAIL_PATTERN = "^[a-zA-Z0-9]+([.+-_][0-9a-zA-Z]+)*"+"@([a-zA-Z0-9][-]?)+[.][a-zA-Z]{2,4}+([.][a-zA-Z]{0,3})?$";
+	        public boolean isValidEmailId(String emailId) {
+	            /**
+	             *
+	             * @param emailId
+	             * @return boolean
+	             */
+	            Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+	            return pattern.matcher(emailId). matches();
+	        }
 }
