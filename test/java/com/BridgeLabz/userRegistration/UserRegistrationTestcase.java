@@ -18,6 +18,7 @@ import org.junit.Test;
  * UC-7- Test cases to validate atLeast 1 Number in Password
  * UC-8- Test cases to validate atLeast 1 Special Characters in Password
  * UC-9- Test cases to validate all sample email Id given
+ * UC-10-Test Cases to Refactor the code
  **************************/
 public class UserRegistrationTestcase {
 
