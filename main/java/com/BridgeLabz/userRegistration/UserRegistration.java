@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
  * UC-8-validate atLeast 1 Special Characters in Password
  * UC-9-validate all sample email Id given
  * UC-10-Refactor the code using junit test cases
+ * Uc-11-Junit test case to validate multiple entry of Email IDs
  *************************************/
 public class UserRegistration {
 
