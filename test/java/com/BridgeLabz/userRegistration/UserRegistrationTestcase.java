@@ -25,80 +25,88 @@ public class UserRegistrationTestcase {
 
 	// UC-1- Test case to validate the first Name starting with Capital Letter
 	@Test
-	public void firstName_whenValid_returnValid() {
-		boolean firstName = UserRegistration.validateName("Anand"); // valid true
+	public void firstName_whenValid_returnValid() throws CustomException {
+		UserRegistration userValidator = new UserRegistration();
+		boolean firstName = userValidator.validateName("Anand"); // valid true
 		Assert.assertEquals(true, firstName);
-		boolean firstName2 = UserRegistration.validateName("user21"); // invalid false
+		boolean firstName2 = userValidator.validateName("user21"); // invalid false
 		Assert.assertEquals(false, firstName2);
 		// test case Passed
 	}
 
 	// UC-2- Test case to validate the last Name of user starting with Capital
 	@Test
-	public void lastName_whenValid_returnValid() {
-		boolean lastName = UserRegistration.validateName("Kumar"); // valid true
+	public void lastName_whenValid_returnValid() throws CustomException  {
+		UserRegistration userValidator = new UserRegistration();
+		boolean lastName = userValidator.validateName("Kumar"); // valid true
 		Assert.assertEquals(true, lastName);
-		boolean lastName2 = UserRegistration.validateName("lastname"); // invalid false
+		boolean lastName2 = userValidator.validateName("lastname"); // invalid false
 		Assert.assertEquals(false, lastName2);
 		// test case Passed
 	}
 
 	// UC-3- Test case to validate User Email ID
 	@Test
-	public void email_whenValid_returnValid() {
-		boolean email = UserRegistration.validateEmail("anand.kumar@bridgelab.co.in"); // valid True
+	public void email_whenValid_returnValid() throws CustomException {
+		UserRegistration userValidator = new UserRegistration();
+		boolean email = userValidator.validateEmail("anand.kumar@bridgelab.co.in"); // valid True
 		Assert.assertEquals(true, email);
-		boolean email2 = UserRegistration.validateEmail("useremail.co.in"); // invalid false
+		boolean email2 = userValidator.validateEmail("useremail.co.in"); // invalid false
 		Assert.assertEquals(false, email2);
 		// test case passed
 	}
 
 	// UC-4- Test cases for validating User Mobile number
 	@Test
-	public void phoneNo_whenValid_returnValid() {
-		boolean phoneNumber = UserRegistration.validateMobile("91 8088533154"); // valid true
+	public void phoneNo_whenValid_returnValid() throws CustomException  {
+		UserRegistration userValidator = new UserRegistration();
+		boolean phoneNumber = userValidator.validateMobile("91 8088533154"); // valid true
 		Assert.assertEquals(true, phoneNumber);
-		boolean phoneNumber2 = UserRegistration.validateMobile("9145896327889652"); // invalid false
+		boolean phoneNumber2 = userValidator.validateMobile("9145896327889652"); // invalid false
 		Assert.assertEquals(false, phoneNumber2);
 		// test case passed
 	}
 
 	// UC-5- Test cases to validate password is with minimum 8 characters
 	@Test
-	public void password_whenLengthEight_returnValid() {
-		boolean password = UserRegistration.validatePasswordRule1("cheGuveera"); // valid true
+	public void password_whenLengthEight_returnValid() throws CustomException  {
+		UserRegistration userValidator = new UserRegistration();
+		boolean password = userValidator.validatePasswordRule1("cheGuveera"); // valid true
 		Assert.assertEquals(true, password);
-		boolean password2 = UserRegistration.validatePasswordRule1("abcd12"); // invalid false
+		boolean password2 = userValidator.validatePasswordRule1("abcd12"); // invalid false
 		Assert.assertEquals(false, password2);
 		// test case passed
 	}
 
 	// UC-6- Test cases to validate atLeast 1 UpperCase Letter in Password
 	@Test
-	public void password_whenFirstLetterCapital_returnValid() {
-		boolean password3 = UserRegistration.validatePasswordRule1("militaryBase"); // valid true
+	public void password_whenFirstLetterCapital_returnValid() throws CustomException  {
+		UserRegistration userValidator = new UserRegistration();
+		boolean password3 = userValidator.validatePasswordRule1("militaryBase"); // valid true
 		Assert.assertEquals(true, password3);
-		boolean password4 = UserRegistration.validatePasswordRule1("alhjg"); // invalid false
+		boolean password4 = userValidator.validatePasswordRule1("alhjg"); // invalid false
 		Assert.assertEquals(false, password4);
 		// test case passed
 	}
 
 	// UC-7- Test cases to validate atLeast 1 Number in Password
 	@Test
-	public void password_atleast_onenumber_returnValid() {
-		boolean password3 = UserRegistration.validatePasswordRule1("Anand123456"); // valid true
+	public void password_atleast_onenumber_returnValid() throws CustomException {
+		UserRegistration userValidator = new UserRegistration();
+		boolean password3 = userValidator.validatePasswordRule1("Anand123456"); // valid true
 		Assert.assertEquals(true, password3);
-		boolean password4 = UserRegistration.validatePasswordRule1("alhjg"); // invalid false
+		boolean password4 = userValidator.validatePasswordRule1("alhjg"); // invalid false
 		Assert.assertEquals(false, password4);
 		// test case passed
 	}
 
 	// UC-8- Test cases to validate atLeast 1 Special Characters in Password
 	@Test
-	public void password_atleast_oneSpecialCharacter_returnValid() {
-		boolean password3 = UserRegistration.validatePasswordRule1("Anand@123456"); // valid true
+	public void password_atleast_oneSpecialCharacter_returnValid() throws CustomException  {
+		UserRegistration userValidator = new UserRegistration();
+		boolean password3 = userValidator.validatePasswordRule1("Anand@123456"); // valid true
 		Assert.assertEquals(true, password3);
-		boolean password4 = UserRegistration.validatePasswordRule1("dsdssd"); // invalid false
+		boolean password4 = userValidator.validatePasswordRule1("dsdssd"); // invalid false
 		Assert.assertEquals(false, password4);
 		// test case passed
 	}
@@ -106,7 +114,7 @@ public class UserRegistrationTestcase {
 	// UC-9- Test cases to validate all sample email Id given
 	 @Test
      public void givenEmailId_WhenProper_ShouldReturnTrue(){
-		 com.BridgeLabz.userRegistration.UserRegistration valid = new com.BridgeLabz.userRegistration.UserRegistration();
+		 UserRegistration valid = new UserRegistration();
          assertTrue(valid.isValidEmailId("abc@yahoo.com"));
          assertTrue(valid.isValidEmailId("abc-100@yahoo.com"));
          assertTrue(valid.isValidEmailId("abc.100@yahoo.com"));

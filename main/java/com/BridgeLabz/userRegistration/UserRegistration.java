@@ -27,7 +27,7 @@ public class UserRegistration {
 	 * @return
 	 */
 	// Method to validate first name and Lastname
-	public static boolean validateName(String name) {
+	public  boolean validateName(String name) {
 		String patternString = "(^[A-Z])[A-Za-z]{2,}$";
 		boolean matches = regexMatch(name, patternString);
 		return matches;
@@ -39,7 +39,7 @@ public class UserRegistration {
 	 * @return
 	 */
 	//method to validate email Id
-	public static boolean validateEmail(String email) {
+	public  boolean validateEmail(String email) {
 		String patternString = "^[a-zA-z]{1}([.]{0,1}[a-zA-z0-9+-]{1,}){0,}[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-z]{2,3}([.]{1}[a-z]{2}){0,1}$";
 		boolean emailMatches = regexMatch(email, patternString);
 		return emailMatches;
@@ -51,7 +51,7 @@ public class UserRegistration {
 	 * @return
 	 */
 	//method to validate MobileNo
-	public static boolean validateMobile(String mobileNubmer) {
+	public  boolean validateMobile(String mobileNubmer) {
 		String patternString = "^([0-9]{2})[\\s]([7-9]{1}[0-9]{9})";
 		boolean phoneMatches = regexMatch(mobileNubmer, patternString);
 		return phoneMatches;
@@ -63,7 +63,7 @@ public class UserRegistration {
 	 * @return
 	 */
 	//method to validate password
-	public static boolean validatePasswordRule1(String password) {
+	public  boolean validatePasswordRule1(String password) {
 		String patternString = "^[a-zA-Z0-9*#@%]{8,}$";
 		boolean passwordMatches = regexMatch(password, patternString);
 		return passwordMatches;
@@ -74,7 +74,7 @@ public class UserRegistration {
 	 * @param patternString
 	 * @return
 	 */
-	public static boolean regexMatch(String matchname, String patternString) {
+	public  boolean regexMatch(String matchname, String patternString) {
 		Pattern p = Pattern.compile(patternString);
 		Matcher m = p.matcher(matchname);
 		boolean matchedname = m.find();
@@ -84,7 +84,7 @@ public class UserRegistration {
 	
 	
 		//method to validate all sample email ID
-	        private static final String EMAIL_PATTERN = "^[a-zA-Z0-9]+([.+-_][0-9a-zA-Z]+)*"+"@([a-zA-Z0-9][-]?)+[.][a-zA-Z]{2,4}+([.][a-zA-Z]{0,3})?$";
+	        private  final String EMAIL_PATTERN = "^[a-zA-Z0-9]+([.+-_][0-9a-zA-Z]+)*"+"@([a-zA-Z0-9][-]?)+[.][a-zA-Z]{2,4}+([.][a-zA-Z]{0,3})?$";
 	        public boolean isValidEmailId(String emailId) {
 	            /**
 	             *
